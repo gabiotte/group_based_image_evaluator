@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy
+import os
 
 def limit(group_df, metric):
     # Caclular mediana
@@ -15,7 +16,8 @@ def limit(group_df, metric):
     return low, high
 
 # Abrir arquivo
-excel_file = "comparacao.xlsx"
+camera_dir = ""
+excel_file = os.path.join(camera_dir, "comparacao.xlsx")
 comparison_table = pd.read_excel(excel_file)
 
 # Adicionar coluna "boa"
