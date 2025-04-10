@@ -79,10 +79,13 @@ def main(camera_dir):
     file.write(f"Taxa de boas fotos: {good_photos_rate*100}%")
 
     file.close()
+    print("✔ Relatório criado")
 
     # Salva a tabela atualizada em um novo arquivo excel
     with pd.ExcelWriter(excel_file_path) as writer:
         comparison_table.to_excel(writer, index=False)
+    
+    print("✔ Tabela atualizada")
 
 
 if __name__ == "__main__":
